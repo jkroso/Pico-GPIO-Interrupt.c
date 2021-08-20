@@ -15,7 +15,7 @@ The API consists of one function: `listen(pin, condition, fn, argument)` and its
 ## Example
 
 ```c
-#include "./deps/pico-gpio-interrupt/gpio-interrupt.c"
+#include "pico-gpio-interrupt/gpio-interrupt.c"
 
 void example(void * p) {
   printf("interrupt called with %i\n", (int *)p);

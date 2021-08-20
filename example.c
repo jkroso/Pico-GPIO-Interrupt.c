@@ -1,4 +1,4 @@
-#include "./gpio-interrupt.c"
+#include "gpio-interrupt.c"
 #include "pico/stdlib.h"
 #include <stdlib.h>
 #include <stdio.h>
