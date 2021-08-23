@@ -1,6 +1,6 @@
 {
   "name": "pico-gpio-interrupt",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repo": "jkroso/pico-gpio-interrupt.c",
   "src": [
     "gpio-interrupt.c"

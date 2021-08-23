@@ -1,5 +1,6 @@
-#ifndef PICO_GPIO_INTERRUPT_H
-#define PICO_GPIO_INTERRUPT_H
+#ifndef PICO_GPIO_INTERRUPT_C
+#define PICO_GPIO_INTERRUPT_C
+
 #include "pico/stdlib.h"
 #include <stdlib.h>
 
@@ -21,7 +22,10 @@ void listen(uint pin, int condition, handler fn, void *arg) {
   gpio_init(pin);
   gpio_pull_up(pin);
   gpio_set_irq_enabled_with_callback(pin, condition, true, handle_interupt);
-  handlers[pin] = (closure_t){ arg, fn };
+  closure_t *handler = malloc(sizeof(closure_t));
+  handler->argument = arg;
+  handler->fn = fn;
+  handlers[pin] = *handler;
 }
 
 #endif
